@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Estudiante,Profesor
-from Clase.forms import EstudianteForm,ProfesorForm
+from .models import Estudiante,Profesor,Curso
+from Clase.forms import EstudianteForm,ProfesorForm,CursoForm
 # Create your views here.
 
 def index(request):
@@ -40,3 +40,23 @@ def profesor_list(request):
 
 def principal_profesores(request):
     return render(request,"Clase/principal_profesores.html")
+
+def principal_cursos(request):
+    return render(request,"Clase/principal_cursos.html")
+
+def curso_create(request):
+    if request.method == "POST":
+        form = CursoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("Clase:principal_cursos")
+        
+    else: #GET
+        form = CursoForm()
+    return render(request, "Clase/curso_create.html",{"form":form})
+
+
+def curso_list(request):
+    consulta = Curso.objects.all()
+    contexto = {"cursos": consulta}
+    return render(request,"Clase/curso_list.html", contexto)

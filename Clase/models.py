@@ -34,3 +34,4 @@ class Profesor(models.Model):
     class Meta:
         verbose_name = "Profesor"
         verbose_name_plural = "Profesores"
+        

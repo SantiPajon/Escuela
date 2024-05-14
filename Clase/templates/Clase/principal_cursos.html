@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Cursos
+{% endblock title %}
+
+{% block content %}
+    
+<h1>Cursos</h1>
+<div>
+    <ul style="list-style-type: none; padding: 0;">
+        <li style="display: inline; margin-right: 10px;">
+            <a href="{% url 'Clase:curso_list' %}">Lista de Cursos</a>
+        </li>
+        <li style="display: inline;">
+            <a href="{% url 'Clase:curso_create' %}">Crear Curso</a>
+        </li>
+    </ul>
+</div>
+
+{% endblock content %}
