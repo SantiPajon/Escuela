@@ -17,7 +17,7 @@ class Estudiante(models.Model):
     
     
     def __str__(self) -> str:
-        return self.nombre
+        return f"{self.nombre},{self.apellido},{self.nacimiento}"
     
     class Meta:
         verbose_name = "Estudiante"
@@ -29,7 +29,7 @@ class Profesor(models.Model):
     apellido = models.CharField(max_length=255)
     
     def __str__(self) -> str:
-        return self.nombre
+        return f"{self.nombre},{self.apellido}"
     
     class Meta:
         verbose_name = "Profesor"

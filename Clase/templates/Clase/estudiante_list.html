@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Clase</title>
+</head>
+<body>
+    <h1>App Clase</h1>
+    <h2>Listado de estudiantes</h2>
+    {% for estudiante in estudiantes  %}
+        <ul>
+            <li><h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3></li>
+            {% if estudiante.nacimiento %}
+                <p>Nacimiento: {{estudiante.nacimiento}}</p>    
+             {% else %}
+                <p>Nacimiento: "No hay registro"</p>
+             {% endif %}
+        </ul>
+    {% endfor %}
+    
+    <button><a href="{% url 'Clase:index' %}">Ir a App Clase</a></button>
+</body>
+</html>
