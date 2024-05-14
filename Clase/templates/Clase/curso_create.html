@@ -5,10 +5,26 @@
 {% endblock title %}
 
 {% block content %}
+    <center>
     <h1>Creacion de Curso</h1>
-    <form action="" method="post">
+    </center>
+    <center>
+    <form style="padding: 1px; /* Espaciado interno */
+     border: 1px solid #ccc; /* Borde sólido */
+     border-radius: 5px; /* Bordes redondeados */
+     background-color: #f9f9f9; /* Color de fondo */
+     font-family: Arial, sans-serif; /* Fuente del texto */" action="" method="post">
         {% csrf_token %}
         {{form}}
-        <button type="submit">Guardar</button>
+        <button style="background-color: #007bff; /* Color de fondo */
+        color: white; /* Color del texto */
+        padding: 10px 20px; /* Espaciado interno */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cambio de cursor al pasar el mouse */
+        font-size: 16px; /* Tamaño de la fuente */
+        font-family: Arial, sans-serif; /* Fuente del texto */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */" type="submit">Guardar</button>
     </form>
+    </center>
 {% endblock content %}
