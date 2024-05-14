@@ -4,17 +4,19 @@
 {% endblock title %}
 
 {% block content %}
-    
+<center>
 <h1>Profesores</h1>
+</center>
+<center>
 <div>
     <ul style="list-style-type: none; padding: 0;">
         <li style="display: inline; margin-right: 10px;">
-            <a href="{% url 'Clase:profesor_list' %}">Lista de Profesores</a>
+            <a href="{% url 'Clase:profesor_list' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Lista de Profesores</a>
         </li>
         <li style="display: inline;">
-            <a href="{% url 'Clase:profesor_create' %}">Crear Profesor</a>
+            <a href="{% url 'Clase:profesor_create' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Crear Profesor</a>
         </li>
     </ul>
 </div>
-
+</center>
 {% endblock content %}

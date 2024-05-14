@@ -7,7 +7,12 @@ def index(request):
     return render(request,"Clase/index.html")
 
 def estudiante_list(request):
-    consulta = Estudiante.objects.all()
+    busqueda = request.GET.get("busqueda",None)
+    if busqueda:
+        print(busqueda)
+        consulta = Estudiante.objects.filter(nombre__icontains=busqueda)
+    else: 
+        consulta = Estudiante.objects.all()
     contexto = {"estudiantes": consulta}
     return render(request,"Clase/estudiante_list.html", contexto)
 
@@ -34,7 +39,12 @@ def profesor_create(request):
     return render(request, "Clase/profesor_create.html",{"form":form})
 
 def profesor_list(request):
-    consulta = Profesor.objects.all()
+    busqueda = request.GET.get("busqueda",None)
+    if busqueda:
+        print(busqueda)
+        consulta = Profesor.objects.filter(nombre__icontains=busqueda)
+    else:
+       consulta = Profesor.objects.all()
     contexto = {"profesores": consulta}
     return render(request,"Clase/profesor_list.html", contexto)
 
@@ -57,6 +67,11 @@ def curso_create(request):
 
 
 def curso_list(request):
-    consulta = Curso.objects.all()
+    busqueda = request.GET.get("busqueda",None)
+    if busqueda:
+        print(busqueda)
+        consulta = Curso.objects.filter(nombre__icontains=busqueda)
+    else:
+        consulta = Curso.objects.all()
     contexto = {"cursos": consulta}
     return render(request,"Clase/curso_list.html", contexto)

@@ -4,17 +4,19 @@
 {% endblock title %}
 
 {% block content %}
-    
+<center>    
 <h1>Estudiantes</h1>
+</center>
+<center>
 <div>
     <ul style="list-style-type: none; padding: 0;">
         <li style="display: inline; margin-right: 10px;">
-            <a href="{% url 'Clase:estudiante_list' %}">Lista de estudiantes</a>
+            <a href="{% url 'Clase:estudiante_list' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Lista de estudiantes</a>
         </li>
         <li style="display: inline;">
-            <a href="{% url 'Clase:estudiante_create' %}">Crear estudiante</a>
+            <a class="btn.btn-primary" href="{% url 'Clase:estudiante_create' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Crear estudiante</a>
         </li>
     </ul>
 </div>
-
+</center>
 {% endblock content %}

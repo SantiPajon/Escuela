@@ -13,5 +13,9 @@
     <li><h3>{{profe.nombre}} {{profe.apellido}}</h3></li>
 </ul>
 {% endfor %}
-
+<ul>
+    <form action="{% url 'Clase:profesor_list' %}" method="get">
+        <input type="text" name="busqueda" placeholder="Buscar...">
+    </form>
+</ul>
 {% endblock content %}

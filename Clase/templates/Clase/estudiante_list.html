@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block content %}
-    
+
 
 <h1>Listado de estudiantes</h1>
 {% for estudiante in estudiantes  %}
@@ -18,5 +18,9 @@
     {% endif %}
 </ul>
 {% endfor %}
-
+<ul>
+    <form action="{% url 'Clase:estudiante_list' %}" method="get">
+        <input type="text" name="busqueda" placeholder="Buscar...">
+    </form>
+</ul>
 {% endblock content %}
