@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Clase</title>
-</head>
-<body>
-    <h1>App Clase</h1>
-    <div>
-        <a href="{% url 'Clase:estudiante_list' %}">Lista de estudiantes</a>
-    </div>
-    <button><a href="{% url 'core:index' %}">Ir al inicio</a></button>
-</body>
-</html>
+{% extends 'core/base.html' %}
+{% block title %}
+    App Clase
+{% endblock title %}
+
+{% block content %}
+    
+<h1>App Clase</h1>
+<div>
+    <a href="{% url 'Clase:estudiante_list' %}">Lista de estudiantes</a>
+</div>
+<button><a href="{% url 'core:index' %}">Ir al inicio</a></button>
+
+{% endblock content %}
