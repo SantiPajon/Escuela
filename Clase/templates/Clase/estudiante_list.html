@@ -9,23 +9,36 @@
 <center>
 <h1>Listado de estudiantes</h1>
 </center>
-<center>
-{% for estudiante in estudiantes  %}
-<ul>
-    <h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3>
-    {% if estudiante.nacimiento %}
-    <p>Nacimiento: {{estudiante.nacimiento}}</p>    
-    {% else %}
-    <p>Nacimiento: "No hay registro"</p>
-    {% endif %}
-</ul>
-{% endfor %}
-</center>
-<ul>
-    <center>
-    <form action="{% url 'Clase:estudiante_list' %}" method="get">
-        <input type="text" name="busqueda" placeholder="Buscar...">
-    </form>
-    </center>
-</ul>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        {% for estudiante in estudiantes %}
+          <div class="card mb-3">
+            <div class="card-body">
+              <h3 class="card-title">{{ estudiante.nombre }} {{ estudiante.apellido }}</h3>
+              {% if estudiante.nacimiento %}
+                <p class="card-text">Nacimiento: {{ estudiante.nacimiento }}</p>    
+              {% else %}
+                <p class="card-text">Nacimiento: No hay registro</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="{% url 'Clase:estudiante_list' %}" method="get">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="busqueda" placeholder="Buscar...">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
 {% endblock content %}
