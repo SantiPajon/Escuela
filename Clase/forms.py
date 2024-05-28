@@ -15,4 +15,7 @@ class ProfesorForm(forms.ModelForm):
 class CursoForm(forms.ModelForm):
     class Meta:
         model = models.Curso
-        fields = ["nombre"]
+        fields = ["nombre","detalle"]
+        widgets = {
+            'detalle': forms.Textarea(attrs={'rows': 10, 'cols': 60}),  # Ajusta rows y cols según sea necesario
+        }
