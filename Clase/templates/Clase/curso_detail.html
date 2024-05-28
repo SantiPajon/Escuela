@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Curso | Detalle del curso:
+{% endblock title %}
+
+{% block body_title %}
+    Curso | Detalle del curso:
+{% endblock body_title %}
+
+{% block content %}
+    <ul> 
+        <li>Nombre: {{object.nombre}}</li>
+        <li>Descripcion: {{object.descripcion}}</li>
+    </ul>
+    <div>
+        <a href="{% url 'producto:productocategoria_list' %}">Volver</a>
+    </div>
+{% endblock content %}

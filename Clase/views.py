@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Estudiante,Profesor,Curso
 from Clase.forms import EstudianteForm,ProfesorForm,CursoForm
+from django.views.generic import CreateView,ListView,DetailView,DeleteView,UpdateView
 # Create your views here.
 
 def index(request):
@@ -75,3 +76,7 @@ def curso_list(request):
         consulta = Curso.objects.all()
     contexto = {"cursos": consulta}
     return render(request,"Clase/curso_list.html", contexto)
+
+
+class CursoDetail(DetailView):
+    model = Curso
