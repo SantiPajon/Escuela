@@ -27,6 +27,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Clase:principal_cursos' %}">Curso</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Clase:index' %}">Estudiante</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Clase:principal_profesores'%}">Profesor</a></li>
+                        <li class="nav-item"><a class="nav-link">{{user.username}}</a></li>
                         
                         <li class="nav-item">
                             <form action="{% url 'core:logout' %}" method="post">
