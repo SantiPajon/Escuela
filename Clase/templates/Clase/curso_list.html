@@ -19,7 +19,9 @@
                   <div class="card-body">
                       <h3 class="card-title">{{ curso.nombre }}</h3>
                       <a href="{% url 'Clase:curso_detail' curso.id %}" class="btn btn-primary">Detalle</a>
-                      <a href="{% url 'Clase:curso_delete' curso.id %}" class="btn btn-primary">Eliminar</a>
+                      {% if user.is_staff %}
+                        <a href="{% url 'Clase:curso_delete' curso.id %}" class="btn btn-primary">Eliminar</a>
+                      {% endif %}
                   </div>
               </div>
           {% endfor %}

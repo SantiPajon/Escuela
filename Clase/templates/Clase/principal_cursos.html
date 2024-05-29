@@ -13,9 +13,11 @@
         <li style="display: inline; margin-right: 10px;">
             <a href="{% url 'Clase:curso_list' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Lista de Cursos</a>
         </li>
-        <li style="display: inline;">
-            <a href="{% url 'Clase:curso_create' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Crear Curso</a>
-        </li>
+        {% if user.is_staff %}
+            <li style="display: inline;">
+                <a href="{% url 'Clase:curso_create' %}" style="text-decoration: none; color: #007bff; font-family: Arial, sans-serif; font-weight: bold;">Crear Curso</a>
+            </li>
+        {% endif %}
     </ul>
 </div>
 </center>
