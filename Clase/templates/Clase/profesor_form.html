@@ -3,7 +3,11 @@
 {% block title %}
     Profesor | Creacion
 {% endblock title %}
-
+  {% if form.instance.pk %}
+    Profesor |  - Edicion
+  {% else %}
+    Profesor |  - Creacion  
+  {% endif %}
 {% block content %}
     <center>
     <h1>Creacion de Profesor</h1>

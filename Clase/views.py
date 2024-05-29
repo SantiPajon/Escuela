@@ -101,3 +101,13 @@ class ProfesorDelete(DeleteView):
     model = Profesor
     success_url = reverse_lazy("Clase:profesor_list")
     
+class ProfesorUpdate(UpdateView):
+    model = Profesor
+    form_class = ProfesorForm
+    success_url = reverse_lazy("Clase:profesor_list")
+    
+class ProfesorCreate(CreateView):
+    model = Profesor
+    form_class = ProfesorForm
+    success_url = reverse_lazy("Clase:profesor_list")
+    

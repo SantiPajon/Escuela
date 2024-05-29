@@ -16,9 +16,14 @@
           <div class="card mb-3">
             <div class="card-body">
               <h3 class="card-title">{{ profe.nombre }} {{ profe.apellido }}</h3>
-              <p class="card-text">Curso: {{ profe.materia }}</p>
+              {% if profe.materia %}
+              <p class="card-text">Curso: {{ profe.materia }}</p>    
+            {% else %}
+              <p class="card-text">Curso: Sin curso a cargo</p>
+            {% endif %}
               {% if user.is_staff %}
                 <a href="{% url 'Clase:profesor_delete' profe.id %}" class="btn btn-primary">Eliminar</a>
+                <a href="{% url 'Clase:profesor_update' profe.id %}" class="btn btn-primary">Cambiar</a>
               {% endif %}   
             </div>
           </div>
