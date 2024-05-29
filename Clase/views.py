@@ -92,3 +92,8 @@ class CursoUpdate(UpdateView):
     model = Curso
     form_class = CursoForm
     success_url = reverse_lazy("Clase:curso_list")
+    
+class EstudianteDelete(DeleteView):
+    model = Estudiante
+    success_url = reverse_lazy("Clase:estudiante_list")
+    

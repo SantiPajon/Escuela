@@ -21,6 +21,9 @@
               {% else %}
                 <p class="card-text">Nacimiento: No hay registro</p>
               {% endif %}
+              {% if user.is_staff %}
+                <a href="{% url 'Clase:estudiante_delete' estudiante.id %}" class="btn btn-primary">Eliminar</a>
+              {% endif %}
             </div>
           </div>
         {% endfor %}
