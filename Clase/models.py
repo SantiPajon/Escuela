@@ -28,6 +28,7 @@ class Estudiante(models.Model):
 class Profesor(models.Model):
     nombre = models.CharField(max_length=255)
     apellido = models.CharField(max_length=255)
+    materia = models.ForeignKey(Curso, on_delete=models.PROTECT,null=True)
     
     def __str__(self) -> str:
         return f"{self.nombre},{self.apellido}"

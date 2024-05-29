@@ -10,7 +10,7 @@ class EstudianteForm(forms.ModelForm):
 class ProfesorForm(forms.ModelForm):
     class Meta:
         model = models.Profesor
-        fields = ["nombre","apellido"]
+        fields = ["nombre","apellido","materia"]
         
 class CursoForm(forms.ModelForm):
     class Meta:
