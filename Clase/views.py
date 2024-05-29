@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Estudiante,Profesor,Curso
 from Clase.forms import EstudianteForm,ProfesorForm,CursoForm
 from django.views.generic import CreateView,ListView,DetailView,DeleteView,UpdateView
+from django.urls import reverse_lazy
 # Create your views here.
 
 def index(request):
@@ -80,3 +81,14 @@ def curso_list(request):
 
 class CursoDetail(DetailView):
     model = Curso
+
+
+class CursoDelete(DeleteView):
+    model = Curso
+    success_url = reverse_lazy("Clase:curso_list")
+    
+    
+class CursoUpdate(UpdateView):
+    model = Curso
+    form_class = CursoForm
+    success_url = reverse_lazy("Clase:curso_list")
