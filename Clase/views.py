@@ -97,3 +97,7 @@ class EstudianteDelete(DeleteView):
     model = Estudiante
     success_url = reverse_lazy("Clase:estudiante_list")
     
+class ProfesorDelete(DeleteView):
+    model = Profesor
+    success_url = reverse_lazy("Clase:profesor_list")
+    

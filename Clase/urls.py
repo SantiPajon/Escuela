@@ -11,7 +11,8 @@ from Clase.views import (
     CursoDetail,
     CursoDelete,
     CursoUpdate,
-    EstudianteDelete)
+    EstudianteDelete,
+    ProfesorDelete)
 
 app_name = "Clase"
 
@@ -29,4 +30,5 @@ urlpatterns = [
     path("curso/delete/<int:pk>", CursoDelete.as_view(), name="curso_delete"),
     path("curso/update/<int:pk>", CursoUpdate.as_view(), name="curso_update"),
     path("estudiante/delete/<int:pk>", EstudianteDelete.as_view(), name="estudiante_delete"),
+    path("profesor/delete/<int:pk>", ProfesorDelete.as_view(), name="profesor_delete"),
 ]
