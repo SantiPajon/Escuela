@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
@@ -15,6 +16,8 @@ class Estudiante(models.Model):
     nombre = models.CharField(max_length=255)
     apellido = models.CharField(max_length=255)
     nacimiento = models.DateField(null=True, blank=True)
+    materia = models.ForeignKey(Curso, on_delete=models.SET_NULL,null=True)
+    inscripcion = models.DateTimeField(default=timezone.now)
     
     
     def __str__(self) -> str:

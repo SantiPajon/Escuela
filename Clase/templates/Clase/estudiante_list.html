@@ -7,41 +7,44 @@
 {% block content %}
 
 <center>
-<h1>Listado de estudiantes</h1>
+  <h1>Listado de estudiantes</h1>
 </center>
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        {% for estudiante in estudiantes %}
-          <div class="card mb-3">
-            <div class="card-body">
-              <h3 class="card-title">{{ estudiante.nombre }} {{ estudiante.apellido }}</h3>
-              {% if estudiante.nacimiento %}
-                <p class="card-text">Nacimiento: {{ estudiante.nacimiento }}</p>    
-              {% else %}
-                <p class="card-text">Nacimiento: No hay registro</p>
-              {% endif %}
-              {% if user.is_staff %}
-                <a href="{% url 'Clase:estudiante_delete' estudiante.id %}" class="btn btn-primary">Eliminar</a>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      {% for estudiante in estudiantes %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title">{{ estudiante.nombre }} {{ estudiante.apellido }}</h3>
+          {% if estudiante.nacimiento %}
+          <p class="card-text">Nacimiento: {{ estudiante.nacimiento }}</p>    
+          {% else %}
+          <p class="card-text">Nacimiento: No hay registro</p>
+          {% endif %}
+          <p class="card-text">Materia: {{ estudiante.materia }}</p>
+          <p class="card-text">Inscripción: {{ estudiante.inscripcion }}</p>
+          {% if user.is_staff %}
+          <a href="{% url 'Clase:estudiante_delete' estudiante.id %}" class="btn btn-primary">Eliminar</a>
+          {% endif %}
+        </div>
       </div>
-    </div>
-    
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="{% url 'Clase:estudiante_list' %}" method="get">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" name="busqueda" placeholder="Buscar...">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-            </div>
-          </div>
-        </form>
-      </div>
+      {% endfor %}
     </div>
   </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form action="{% url 'Clase:estudiante_list' %}" method="get">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="busqueda" placeholder="Buscar...">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
   
 {% endblock content %}

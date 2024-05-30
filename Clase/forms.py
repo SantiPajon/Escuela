@@ -5,7 +5,7 @@ from . import models
 class EstudianteForm(forms.ModelForm):
     class Meta:
         model = models.Estudiante
-        fields = ["nombre","apellido","nacimiento"]
+        fields = ["nombre","apellido","nacimiento","materia"]
         
 class ProfesorForm(forms.ModelForm):
     class Meta:
