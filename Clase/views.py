@@ -111,3 +111,5 @@ class ProfesorCreate(CreateView):
     form_class = ProfesorForm
     success_url = reverse_lazy("Clase:profesor_list")
     
+def about(request):
+    return render(request,"Clase/about.html")

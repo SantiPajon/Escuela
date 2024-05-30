@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+    
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    img {
+        border-radius: 50%;
+        width: 440px;
+        height: 440px; /* Establecer la altura igual al ancho */
+        margin-bottom: 20px;
+    }
+    h3 {
+        color: #007bff;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <img src="{% static 'core/img/Fotocamisa.jpg' %}" alt="Foto de Santiago Pajon">
+    <h3>Acerca de Mí</h3>
+    <h2>Santiago Pajon</h2>
+    <p>Hola, soy Santiago Pajon. Tengo 20 años y actualmente trabajo en la empresa Aluar - División Elaborados desde hace dos años. Estoy incursionando en el mundo de la programación y he adquirido conocimientos en Python y el framework Django gracias al curso en CoderHouse. ¡Gracias por visitar mi página!</p>
+</div>
+</body>
+{% endblock content %}
